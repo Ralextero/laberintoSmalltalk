@@ -5,19 +5,25 @@ Class {
 	#name : #Contenedor,
 	#superclass : #ElementoMapa,
 	#instVars : [
-		'hijos'
+		'hijos',
+		'orientaciones'
 	],
 	#category : #'JuegoLaberinto-Laberinto'
 }
 
-{ #category : #'as yet unclassified' }
+{ #category : #'gestion-hijos' }
 Contenedor >> agregarHijo:unEM [
 	unEM padre:self.
 	self hijos add:unEM.
 	
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #'gestion-orientaciones' }
+Contenedor >> agregarOrientacion:unaOr [
+	self orientaciones add:unaOr.
+]
+
+{ #category : #'gestion-hijos' }
 Contenedor >> eliminarHijo:unEM [
 	self hijos remove:unEM ifAbsent:["No existe ese objeto hijo"]
 ]
@@ -37,4 +43,24 @@ Contenedor >> hijos: anObject [
 { #category : #initialization }
 Contenedor >> initialize [
 	hijos:=OrderedCollection new.
+	orientaciones:=OrderedCollection new.
+]
+
+{ #category : #accessing }
+Contenedor >> orientaciones [
+
+	^ orientaciones
+]
+
+{ #category : #accessing }
+Contenedor >> orientaciones: anObject [
+
+	orientaciones := anObject
+]
+
+{ #category : #'gestion-orientaciones' }
+Contenedor >> ponerEnOr:unaOr elemento:unEM [
+	"opcion 1: usar if then else para preguntar por unaOr"
+	"opcion 2: delegar en la orientacion"
+	unaOr ponerElemento:unEM en:self.
 ]

@@ -4,5 +4,10 @@ Interfaz común para las orientaciones
 Class {
 	#name : #Orientacion,
 	#superclass : #Object,
-	#category : #JuegoLaberinto
+	#category : #'JuegoLaberinto-Laberinto'
 }
+
+{ #category : #'as yet unclassified' }
+Orientacion >> ponerElemento:unEM en:unContenedor [
+	self subclassResponsibility 
+]
