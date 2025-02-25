@@ -20,6 +20,11 @@ Habitacion >> entrar [
 	Transcript show: 'Has entrado en una habitacion';cr.
 ]
 
+{ #category : #consulta }
+Habitacion >> esHabitacion [ 
+	^true
+]
+
 { #category : #accessing }
 Habitacion >> este [
 
@@ -54,6 +59,12 @@ Habitacion >> num [
 Habitacion >> num: anObject [
 
 	num := anObject
+]
+
+{ #category : #'as yet unclassified' }
+Habitacion >> obtenerElementoOr:unaOr [
+
+	^self unaOr.
 ]
 
 { #category : #accessing }

@@ -32,6 +32,11 @@ Puerta >> entrar [
 	ifFalse:[Transcript show:'Te has chocado con la puerta';cr]
 ]
 
+{ #category : #consulta }
+Puerta >> esPuerta [ 
+	^true
+]
+
 { #category : #initialization }
 Puerta >> initialize [
 	

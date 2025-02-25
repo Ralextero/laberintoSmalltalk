@@ -46,6 +46,17 @@ Contenedor >> initialize [
 	orientaciones:=OrderedCollection new.
 ]
 
+{ #category : #'as yet unclassified' }
+Contenedor >> obtenerElementoOr:unaOr [
+
+	self subclassResponsibility.
+]
+
+{ #category : #'as yet unclassified' }
+Contenedor >> obtenerElementoOrEn:unaOr [
+	^unaOr ObtenerElementoOrEn:self.
+]
+
 { #category : #accessing }
 Contenedor >> orientaciones [
 

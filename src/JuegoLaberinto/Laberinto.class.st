@@ -25,6 +25,11 @@ Laberinto >> entrar [
 	Transcript show:'Has entrado en una habitacion';cr.
 ]
 
+{ #category : #consulta }
+Laberinto >> esLaberinto [ 
+	^true
+]
+
 { #category : #habitaciones }
 Laberinto >> obtenerHabitacion:unNum [
 

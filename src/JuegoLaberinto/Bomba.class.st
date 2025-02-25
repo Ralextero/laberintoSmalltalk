@@ -29,6 +29,11 @@ Bomba >> entrar [
 	
 ]
 
+{ #category : #consulta }
+Bomba >> esBomba [ 
+	^true
+]
+
 { #category : #initialization }
 Bomba >> initialize [ 
 	activa:=false.
