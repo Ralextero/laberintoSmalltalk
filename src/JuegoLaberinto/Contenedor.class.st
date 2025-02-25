@@ -48,13 +48,7 @@ Contenedor >> initialize [
 
 { #category : #'as yet unclassified' }
 Contenedor >> obtenerElementoOr:unaOr [
-
-	self subclassResponsibility.
-]
-
-{ #category : #'as yet unclassified' }
-Contenedor >> obtenerElementoOrEn:unaOr [
-	^unaOr ObtenerElementoOrEn:self.
+	^unaOr obtenerElementoOrEn:self.
 ]
 
 { #category : #accessing }
