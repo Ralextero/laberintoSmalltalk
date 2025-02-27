@@ -24,7 +24,7 @@ Bomba >> activa: anObject [
 
 { #category : #caminar }
 Bomba >> entrar [ 
-	self activa ifTrue:[Transcript show:'Te metista una bomba en la cara';cr]
+	self activa ifTrue:[Transcript show:'Te metista una bomba en la cara';cr.]
 	ifFalse:[self em entrar]
 	
 ]

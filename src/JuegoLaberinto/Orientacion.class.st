@@ -7,12 +7,12 @@ Class {
 	#category : #'JuegoLaberinto-Laberinto'
 }
 
-{ #category : #'as yet unclassified' }
+{ #category : #'gestion-orientaciones' }
 Orientacion >> obtenerElementoOrEn: unContenedor [
 	self subclassResponsibility 
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #'gestion-orientaciones' }
 Orientacion >> ponerElemento:unEM en:unContenedor [
 	self subclassResponsibility 
 ]

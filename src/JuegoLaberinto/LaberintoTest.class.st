@@ -2,10 +2,23 @@ Class {
 	#name : #LaberintoTest,
 	#superclass : #TestCase,
 	#instVars : [
-		'juego'
+		'juego',
+		'fm'
 	],
 	#category : #'JuegoLaberinto-Pruebas'
 }
+
+{ #category : #accessing }
+LaberintoTest >> fm [
+
+	^ fm
+]
+
+{ #category : #accessing }
+LaberintoTest >> fm: anObject [
+
+	fm := anObject
+]
 
 { #category : #accessing }
 LaberintoTest >> juego [
@@ -21,7 +34,7 @@ LaberintoTest >> juego: anObject [
 
 { #category : #running }
 LaberintoTest >> setUp [
-	| fm |
+	
 	super setUp.
 
 	juego:=Juego new.
@@ -36,9 +49,7 @@ LaberintoTest >> setUp [
 { #category : #tests }
 LaberintoTest >> testHabitaciones [
 
-	|hab1 hab2 pt12 norte sur este oeste fm|
-	
-	fm:=Creator new.
+	|hab1 hab2 pt12 norte sur este oeste|
 	
 	norte:=fm fabricarNorte.
 	sur:=fm fabricarSur.
@@ -54,11 +65,20 @@ LaberintoTest >> testHabitaciones [
 	self assert:hab1 norte esPared. "para mejorar: hab1 obtenerElementoOr:norte o norte variable temporal"
 	
 	"..."
+
+	self assert: (hab1 obtenerElementoOr:norte) esPared.
+	self assert: (hab1 obtenerElementoOr:este) esPared.
+	self assert: (hab1 obtenerElementoOr:oeste) esPared.
+
+	self assert: (hab2 obtenerElementoOr:sur) esPared.
+	self assert: (hab2 obtenerElementoOr:este) esPared.
+	self assert: (hab2 obtenerElementoOr:oeste) esPared.
 	
-	pt12:=hab1 sur. "hab1 obtenerElementoOr:sur"
+	pt12:=hab1 obtenerElementoOr:sur. "hab1 obtenerElementoOr:sur"
 	self assert:pt12 esPuerta.
-	self assert:hab2 norte esPuerta.
+	self assert:(hab2 obtenerElementoOr:norte)  esPuerta.
 	self assert:pt12 abierta not.
+	
 	
 	
 	

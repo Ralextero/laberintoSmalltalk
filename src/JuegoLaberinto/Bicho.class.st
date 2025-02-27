@@ -15,7 +15,7 @@ Class {
 
 { #category : #initialize }
 Bicho >> actua [
-	self modo actua
+	self modo actua:self
 ]
 
 { #category : #consulta }

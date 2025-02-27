@@ -7,7 +7,7 @@ Class {
 	#category : #'JuegoLaberinto-Laberinto'
 }
 
-{ #category : #'as yet unclassified' }
+{ #category : #acciones }
 Modo >> actua:unBicho [
 	"Template"
 	"self duerme."
@@ -15,7 +15,7 @@ Modo >> actua:unBicho [
 	"self ataca."
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #acciones }
 Modo >> camina:unBicho [
 	"self subclassResponsibility, modo abstracto, cada uno lo implementa"
 	" , por defecto no hacen nada, si no se definen los bichos no caminan"

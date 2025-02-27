@@ -13,6 +13,7 @@ Creator >> fabricarBichoAgresivo [
 	
 	bicho:= Bicho new.
 	bicho modo: Agresivo new.
+	bicho vidas:5.
 	bicho poder:5.
 	^bicho.
 ]
@@ -33,7 +34,7 @@ Creator >> fabricarBomba [
 	^Bomba new
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #'fm-orientaciones' }
 Creator >> fabricarEste [
 	^Este new.
 ]
@@ -68,14 +69,23 @@ Creator >> fabricarModoAgresivo:unBicho [
 
 	unBicho modo:Agresivo new.
 	unBicho poder:10.
+	unBicho vidas:5.
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #'fm-bichos' }
+Creator >> fabricarModoPerezoso:unBicho [
+
+	unBicho modo:Perezoso new.
+	unBicho poder:1.
+	unBicho vidas:1.
+]
+
+{ #category : #'fm-orientaciones' }
 Creator >> fabricarNorte [
 	^Norte new.
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #'fm-orientaciones' }
 Creator >> fabricarOeste [
 	^Oeste new.
 ]
@@ -90,7 +100,7 @@ Creator >> fabricarPuerta [
 	^Puerta new
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #'fm-orientaciones' }
 Creator >> fabricarSur [
 	^Sur new.
 ]

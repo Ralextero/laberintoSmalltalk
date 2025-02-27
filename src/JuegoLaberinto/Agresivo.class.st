@@ -1,5 +1,5 @@
 "
-bicho rapido y con mucho poder
+Agresivo: bicho que se mueve rápido y tiene más poder
 "
 Class {
 	#name : #Agresivo,
@@ -9,10 +9,5 @@ Class {
 
 { #category : #consulta }
 Agresivo >> esAgresivo [ 
-	^true
-]
-
-{ #category : #consulta }
-Agresivo >> esPerezoso [ 
 	^true
 ]

@@ -61,12 +61,6 @@ Habitacion >> num: anObject [
 	num := anObject
 ]
 
-{ #category : #'as yet unclassified' }
-Habitacion >> obtenerElementoOr:unaOr [
-
-	^self unaOr.
-]
-
 { #category : #accessing }
 Habitacion >> oeste [
 
