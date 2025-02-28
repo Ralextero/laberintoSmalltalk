@@ -46,7 +46,7 @@ Contenedor >> initialize [
 	orientaciones:=OrderedCollection new.
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #consulta }
 Contenedor >> obtenerElementoOr:unaOr [
 	^unaOr obtenerElementoOrEn:self.
 ]
