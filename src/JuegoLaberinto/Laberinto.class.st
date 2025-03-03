@@ -7,10 +7,21 @@ Class {
 	#category : #'JuegoLaberinto-Laberinto'
 }
 
+{ #category : #'as yet unclassified' }
+Laberinto >> abrirPuertas [
+	self recorrer:[:each | each esPuerta ifTrue:[each abrir]].
+]
+
 { #category : #habitaciones }
 Laberinto >> agregarHabitacion:unaHabitacion [
 
 	self hijos add:unaHabitacion
+]
+
+{ #category : #'as yet unclassified' }
+Laberinto >> cerrarPuertas [
+
+self recorrer:[:each | each esPuerta ifTrue:[each cerrar]].
 ]
 
 { #category : #habitaciones }
@@ -20,9 +31,13 @@ Laberinto >> eliminarHabitacion:unaHabitacion [
 ]
 
 { #category : #caminar }
-Laberinto >> entrar [
+Laberinto >> entrar:alguien [
+|hab1 |
+hab1:= self obtenerHabitacion:1.
+hab1 entrar:alguien.
 	"deberemos  indicar quien entra"
 	Transcript show:'Has entrado en una habitacion';cr.
+	
 ]
 
 { #category : #consulta }
@@ -34,4 +49,10 @@ Laberinto >> esLaberinto [
 Laberinto >> obtenerHabitacion:unNum [
 
 	^self hijos detect:[:each | each num = unNum ] ifNone:[ nil ]
+]
+
+{ #category : #printing }
+Laberinto >> printOn:aStream [
+
+	aStream nextPutAll:'Laberinto'
 ]

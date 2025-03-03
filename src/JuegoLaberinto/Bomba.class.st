@@ -23,9 +23,11 @@ Bomba >> activa: anObject [
 ]
 
 { #category : #caminar }
-Bomba >> entrar [ 
-	self activa ifTrue:[Transcript show:'Te metista una bomba en la cara';cr.]
-	ifFalse:[self em entrar]
+Bomba >> entrar:alguien [
+	self activa ifTrue:[Transcript show:alguien printString ; nextPutAll: ' ha chocado con una bomba en la cara';cr.
+		"queda quitar vidas, explotar"
+		]
+	ifFalse:[self em entrar:alguien]
 ]
 
 { #category : #consulta }
