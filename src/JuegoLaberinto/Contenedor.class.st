@@ -69,3 +69,12 @@ Contenedor >> ponerEnOr:unaOr elemento:unEM [
 	"opcion 2: delegar en la orientacion"
 	unaOr ponerElemento:unEM en:self.
 ]
+
+{ #category : #recorrido }
+Contenedor >> recorrer:unBloque [
+
+	unBloque value:self.
+	self hijos do: [:each|each recorrer:unBloque]. 
+	"tengo que recorrrer las orientaciones tambien"
+	self orientaciones recorrer:unBloque contenedor: self.
+]

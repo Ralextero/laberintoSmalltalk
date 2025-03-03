@@ -6,3 +6,9 @@ Class {
 	#superclass : #ElementoMapa,
 	#category : #'JuegoLaberinto-Laberinto'
 }
+
+{ #category : #recorrido }
+Hoja >> recorrer:unBloque [
+
+	unBloque value:self
+]

@@ -26,7 +26,6 @@ Bomba >> activa: anObject [
 Bomba >> entrar [ 
 	self activa ifTrue:[Transcript show:'Te metista una bomba en la cara';cr.]
 	ifFalse:[self em entrar]
-	
 ]
 
 { #category : #consulta }

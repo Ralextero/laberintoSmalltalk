@@ -8,6 +8,22 @@ Class {
 }
 
 { #category : #'fm-bichos' }
+Creator >> cambiarAModoAgresivo:unBicho [
+
+	unBicho modo:Agresivo new.
+	unBicho poder:10.
+	unBicho vidas:5.
+]
+
+{ #category : #'fm-bichos' }
+Creator >> cambiarAModoPerezoso:unBicho [
+
+	unBicho modo:Perezoso new.
+	unBicho poder:1.
+	unBicho vidas:1.
+]
+
+{ #category : #'fm-bichos' }
 Creator >> fabricarBichoAgresivo [
 	|bicho|
 	
@@ -62,22 +78,6 @@ Creator >> fabricarJuego [
 { #category : #'factory method' }
 Creator >> fabricarLaberinto [
 	^Laberinto new
-]
-
-{ #category : #'fm-bichos' }
-Creator >> fabricarModoAgresivo:unBicho [
-
-	unBicho modo:Agresivo new.
-	unBicho poder:10.
-	unBicho vidas:5.
-]
-
-{ #category : #'fm-bichos' }
-Creator >> fabricarModoPerezoso:unBicho [
-
-	unBicho modo:Perezoso new.
-	unBicho poder:1.
-	unBicho vidas:1.
 ]
 
 { #category : #'fm-orientaciones' }
