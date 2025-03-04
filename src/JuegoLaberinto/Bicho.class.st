@@ -28,6 +28,12 @@ Bicho >> esPerezoso [
 	^self modo esPerezoso.
 ]
 
+{ #category : #'as yet unclassified' }
+Bicho >> estaVivo [
+
+	^self vidas > 0
+]
+
 { #category : #initialize }
 Bicho >> iniAgresivo [
 	self modo:Agresivo new.
