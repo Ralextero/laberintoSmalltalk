@@ -51,6 +51,15 @@ Contenedor >> obtenerElementoOr:unaOr [
 	^unaOr obtenerElementoOrEn:self.
 ]
 
+{ #category : #'gestion-orientaciones' }
+Contenedor >> obtenerOrientacion [ 
+	|ind|
+	ind:=(1 to:self orientaciones size) atRandom.
+	^self orientaciones at:ind.
+	
+	"self orientaciones size"
+]
+
 { #category : #accessing }
 Contenedor >> orientaciones [
 

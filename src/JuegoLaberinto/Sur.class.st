@@ -7,6 +7,13 @@ Class {
 	#category : #'JuegoLaberinto-Laberinto'
 }
 
+{ #category : #acciones }
+Sur >> caminar:unBicho [
+	|pos|
+	pos := unBicho posicion.
+	pos sur entrar:unBicho.
+]
+
 { #category : #'gestion-orientaciones-sur' }
 Sur >> obtenerElementoOrEn: unContenedor [
 	^unContenedor sur.

@@ -7,6 +7,13 @@ Class {
 	#category : #'JuegoLaberinto-Laberinto'
 }
 
+{ #category : #acciones }
+Norte >> caminar:unBicho [
+	|pos|
+	pos := unBicho posicion.
+	pos norte entrar:unBicho.
+]
+
 { #category : #'gestion-orientaciones-norte' }
 Norte >> obtenerElementoOrEn: unContenedor [
 	^unContenedor norte

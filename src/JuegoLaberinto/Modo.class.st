@@ -11,15 +11,32 @@ Class {
 Modo >> actua:unBicho [
 	"Template"
 	"self duerme."
-	self camina:unBicho.
+	self caminar:unBicho.
+	"self dormir:unBicho."
+	self atacar:unBicho.
 	"self ataca."
 ]
 
+{ #category : #'as yet unclassified' }
+Modo >> atacar:unBicho [
+	"no hace nada de momento, cambiarlo estaria chido"
+]
+
 { #category : #acciones }
-Modo >> camina:unBicho [
-	"self subclassResponsibility, modo abstracto, cada uno lo implementa"
-	" , por defecto no hacen nada, si no se definen los bichos no caminan"
-	"definir un caminar predeterminado para todos, como minimo los bichos hacen una cosa en este metodo"
+Modo >> caminar:unBicho [
+	|or |
+"obtener posicion del bicho: bicho posicion"
+"elegir una orientacion aleatoria en esa posicion."
+	or:=unBicho obtenerOrientacion.
+"caminar hacia esa orientacion"
+	or caminar:unBicho.
+"una posibilidad sobre como implementar el caminar"
+]
+
+{ #category : #acciones }
+Modo >> dormir:unBicho [
+
+	self subclassResponsibility 
 ]
 
 { #category : #consulta }

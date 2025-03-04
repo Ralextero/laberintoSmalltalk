@@ -7,6 +7,12 @@ Class {
 	#category : #'JuegoLaberinto-Laberinto'
 }
 
+{ #category : #acciones }
+Orientacion >> caminar:unBicho [
+
+	self subclassResponsibility 
+]
+
 { #category : #'gestion-orientaciones' }
 Orientacion >> obtenerElementoOrEn: unContenedor [
 	self subclassResponsibility 
