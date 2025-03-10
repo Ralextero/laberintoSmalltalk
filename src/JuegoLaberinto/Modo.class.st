@@ -21,6 +21,7 @@ Modo >> actua:unBicho [
 { #category : #acciones }
 Modo >> atacar:unBicho [
 	"no hace nada de momento, cambiarlo estaria chido"
+	unBicho atacar.
 ]
 
 { #category : #acciones }

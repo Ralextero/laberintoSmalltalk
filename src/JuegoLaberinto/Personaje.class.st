@@ -10,22 +10,31 @@ Class {
 	#category : #'JuegoLaberinto-Laberinto'
 }
 
-{ #category : #'as yet unclassified' }
+{ #category : #acciones }
+Personaje >> esAtacadoPor:unBicho [ "mensaje 12"
+	
+	Transcript show:self printString ; nextPutAll:' es atacado por ' ; nextPutAll: unBicho printString.
+	self vidas:(self vidas - unBicho poder).
+	Transcript show:'Vidas: ' ;nextPutAll: self vidas asString ; cr.
+	self vidas < 0 ifTrue:[self juego muerePersonaje].
+]
+
+{ #category : #movimientos }
 Personaje >> irAlEste [
 	 self posicion irAlEste:self.
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #movimientos }
 Personaje >> irAlNorte [
 	 self posicion irAlNorte:self.
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #movimientos }
 Personaje >> irAlOeste [
 	 self posicion irAlOeste:self.
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #movimientos }
 Personaje >> irAlSur [
 	 self posicion irAlSur:self.
 ]

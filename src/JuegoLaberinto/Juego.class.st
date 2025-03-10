@@ -21,12 +21,14 @@ Juego >> abrirPuertas [
 { #category : #'gestion-bichos' }
 Juego >> agregarBicho:unBicho [
 	self bichos add:unBicho.
+	unBicho juego:self.
 ]
 
 { #category : #'as yet unclassified' }
 Juego >> agregarPersonaje:unaCadena [
 
 	self person:(Personaje new nombre:unaCadena).
+	self person juego:self.
 	self laberinto entrar:self person.
 ]
 
@@ -40,6 +42,16 @@ Juego >> bichos [
 Juego >> bichos: anObject [
 
 	bichos := anObject
+]
+
+{ #category : #'as yet unclassified' }
+Juego >> buscarPersonaje:unBicho [
+	|posBicho posPersonaje|
+	
+	posBicho := unBicho posicion. "Mensajes 8 y 9"
+	posPersonaje:= person posicion. "Mensajes 10 y 11"
+	
+	posBicho = posPersonaje  ifTrue:[self person esAtacadoPor:unBicho].
 ]
 
 { #category : #acciones }
@@ -268,6 +280,12 @@ Juego >> lanzarBicho:unBicho [
 Juego >> lanzarBichos [
 	
 	self bichos do:[:each | self lanzarBicho:each]
+]
+
+{ #category : #'as yet unclassified' }
+Juego >> muerePersonaje [
+	Transcript show:'Fin del Juego';cr.
+	self terminarBichos.
 ]
 
 { #category : #accessing }
