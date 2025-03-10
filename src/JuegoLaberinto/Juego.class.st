@@ -24,7 +24,7 @@ Juego >> agregarBicho:unBicho [
 	unBicho juego:self.
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #acciones }
 Juego >> agregarPersonaje:unaCadena [
 
 	self person:(Personaje new nombre:unaCadena).
@@ -44,7 +44,7 @@ Juego >> bichos: anObject [
 	bichos := anObject
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #acciones }
 Juego >> buscarPersonaje:unBicho [
 	|posBicho posPersonaje|
 	
@@ -282,7 +282,7 @@ Juego >> lanzarBichos [
 	self bichos do:[:each | self lanzarBicho:each]
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #acciones }
 Juego >> muerePersonaje [
 	Transcript show:'Fin del Juego';cr.
 	self terminarBichos.

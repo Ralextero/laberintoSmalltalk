@@ -15,7 +15,7 @@ Bicho >> actua [
 	self modo actua:self
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #acciones }
 Bicho >> atacar [ 
 	self juego buscarPersonaje:self.
 ]
