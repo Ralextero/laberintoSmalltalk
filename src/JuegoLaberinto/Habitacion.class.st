@@ -17,7 +17,7 @@ Class {
 { #category : #caminar }
 Habitacion >> entrar:alguien [
 	"deberemos  indicar quien entra"
-	Transcript show:alguien printString; nextPutAll: 'Estas en Surmania' ;nextPutAll: self printString;  cr.
+	Transcript show:alguien printString; nextPutAll: ' ha entrado en ' ;nextPutAll: self printString;  cr.
 	
 	alguien posicion:self.
 ]

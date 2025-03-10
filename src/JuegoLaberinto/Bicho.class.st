@@ -3,12 +3,9 @@ El bicho
 "
 Class {
 	#name : #Bicho,
-	#superclass : #Object,
+	#superclass : #Ente,
 	#instVars : [
-		'vidas',
-		'poder',
-		'modo',
-		'posicion'
+		'modo'
 	],
 	#category : #'JuegoLaberinto-Laberinto'
 }
@@ -46,12 +43,6 @@ Bicho >> iniPerezoso [
 	self poder:1.
 ]
 
-{ #category : #initialize }
-Bicho >> initialize [ 
-	vidas:=5.
-	poder:=1.
-]
-
 { #category : #accessing }
 Bicho >> modo [
 
@@ -69,40 +60,4 @@ Bicho >> obtenerOrientacion [
 
 	
 	^self posicion obtenerOrientacion.
-]
-
-{ #category : #accessing }
-Bicho >> poder [
-
-	^ poder
-]
-
-{ #category : #accessing }
-Bicho >> poder: anObject [
-
-	poder := anObject
-]
-
-{ #category : #accessing }
-Bicho >> posicion [
-
-	^ posicion
-]
-
-{ #category : #accessing }
-Bicho >> posicion: anObject [
-
-	posicion := anObject
-]
-
-{ #category : #accessing }
-Bicho >> vidas [
-
-	^ vidas
-]
-
-{ #category : #accessing }
-Bicho >> vidas: anObject [
-
-	vidas := anObject
 ]
