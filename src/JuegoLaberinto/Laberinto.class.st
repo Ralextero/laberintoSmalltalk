@@ -7,7 +7,7 @@ Class {
 	#category : #'JuegoLaberinto-Laberinto'
 }
 
-{ #category : #'as yet unclassified' }
+{ #category : #acciones }
 Laberinto >> abrirPuertas [
 	self recorrer:[:each | each esPuerta ifTrue:[each abrir]].
 ]
@@ -18,7 +18,7 @@ Laberinto >> agregarHabitacion:unaHabitacion [
 	self hijos add:unaHabitacion
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #acciones }
 Laberinto >> cerrarPuertas [
 
 self recorrer:[:each | each esPuerta ifTrue:[each cerrar]].

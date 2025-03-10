@@ -4,8 +4,22 @@ Orientacion: Norte
 Class {
 	#name : #Norte,
 	#superclass : #Orientacion,
+	#classVars : [
+		'UnicaInstancia'
+	],
 	#category : #'JuegoLaberinto-Laberinto'
 }
+
+{ #category : #accessing }
+Norte class >> default [
+	UnicaInstancia ifNil:[UnicaInstancia:=super new].
+	^UnicaInstancia.
+]
+
+{ #category : #'instance creation' }
+Norte class >> new [
+	self error:'no se puede crear objeto'
+]
 
 { #category : #acciones }
 Norte >> caminar:unBicho [

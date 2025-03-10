@@ -52,7 +52,7 @@ Creator >> fabricarBomba [
 
 { #category : #'fm-orientaciones' }
 Creator >> fabricarEste [
-	^Este new.
+	^Este default.
 ]
 
 { #category : #'factory method' }
@@ -82,12 +82,12 @@ Creator >> fabricarLaberinto [
 
 { #category : #'fm-orientaciones' }
 Creator >> fabricarNorte [
-	^Norte new.
+	^Norte default
 ]
 
 { #category : #'fm-orientaciones' }
 Creator >> fabricarOeste [
-	^Oeste new.
+	^Oeste default.
 ]
 
 { #category : #'factory method' }
@@ -102,5 +102,5 @@ Creator >> fabricarPuerta [
 
 { #category : #'fm-orientaciones' }
 Creator >> fabricarSur [
-	^Sur new.
+	^Sur default.
 ]

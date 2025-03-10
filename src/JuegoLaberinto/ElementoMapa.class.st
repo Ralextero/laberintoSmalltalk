@@ -10,7 +10,7 @@ Class {
 	#category : #'JuegoLaberinto-Laberinto'
 }
 
-{ #category : #'as yet unclassified' }
+{ #category : #caminar }
 ElementoMapa >> entrar:alguien [
 	"deberemos  indicar quien entra"
 	self subclassResponsibility 

@@ -28,7 +28,7 @@ Bicho >> esPerezoso [
 	^self modo esPerezoso.
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #consulta }
 Bicho >> estaVivo [
 
 	^self vidas > 0
@@ -64,7 +64,7 @@ Bicho >> modo: anObject [
 	modo := anObject
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #consulta }
 Bicho >> obtenerOrientacion [
 
 	

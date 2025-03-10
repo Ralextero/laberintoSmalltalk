@@ -24,14 +24,14 @@ Puerta >> abierta: anObject [
 	abierta := anObject
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #acciones }
 Puerta >> abrir [ 
 
 	self abierta:true.
 	Transcript show: 'Puerta abierta';cr.
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #acciones }
 Puerta >> cerrar [ 
 
 	self abierta:false.

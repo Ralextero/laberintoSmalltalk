@@ -4,8 +4,22 @@ Orientacion: Sur
 Class {
 	#name : #Sur,
 	#superclass : #Orientacion,
+	#classVars : [
+		'UnicaInstancia'
+	],
 	#category : #'JuegoLaberinto-Laberinto'
 }
+
+{ #category : #accessing }
+Sur class >> default [
+	UnicaInstancia ifNil:[UnicaInstancia:=super new].
+	^UnicaInstancia.
+]
+
+{ #category : #'instance creation' }
+Sur class >> new [
+	self error:'no se puede crear objeto'
+]
 
 { #category : #acciones }
 Sur >> caminar:unBicho [

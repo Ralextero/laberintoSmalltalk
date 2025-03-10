@@ -11,13 +11,14 @@ Class {
 Modo >> actua:unBicho [
 	"Template"
 	"self duerme."
+	self dormir:unBicho.
 	self caminar:unBicho.
-	"self dormir:unBicho."
+	
 	self atacar:unBicho.
 	"self ataca."
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #acciones }
 Modo >> atacar:unBicho [
 	"no hace nada de momento, cambiarlo estaria chido"
 ]

@@ -12,7 +12,7 @@ Class {
 	#category : #'JuegoLaberinto-Laberinto'
 }
 
-{ #category : #'as yet unclassified' }
+{ #category : #acciones }
 Juego >> abrirPuertas [
 	self laberinto abrirPuertas.
 ]
@@ -34,7 +34,7 @@ Juego >> bichos: anObject [
 	bichos := anObject
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #acciones }
 Juego >> cerrarPuertas [
 	self laberinto cerrarPuertas 
 ]
@@ -247,7 +247,7 @@ Juego >> laberinto: anObject [
 	laberinto := anObject
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #acciones }
 Juego >> lanzarBicho:unBicho [
 	| proceso |
 	 proceso:=[ [unBicho estaVivo] whileTrue:[unBicho actua]] fork.
@@ -255,7 +255,7 @@ Juego >> lanzarBicho:unBicho [
 
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #acciones }
 Juego >> lanzarBichos [
 	
 	self bichos do:[:each | self lanzarBicho:each]
@@ -268,7 +268,7 @@ Juego >> obtenerHabitacion:unNum [
 	^self laberinto obtenerHabitacion:unNum
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #acciones }
 Juego >> terminarBicho:unBicho [
 	unBicho vidas:0.
 ]

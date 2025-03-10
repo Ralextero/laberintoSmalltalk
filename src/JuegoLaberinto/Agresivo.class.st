@@ -7,7 +7,7 @@ Class {
 	#category : #'JuegoLaberinto-Laberinto'
 }
 
-{ #category : #'as yet unclassified' }
+{ #category : #acciones }
 Agresivo >> dormir:unBicho [
 
 	Transcript show:unBicho printString ; nextPutAll: ' duerme';cr.

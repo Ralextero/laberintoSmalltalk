@@ -4,8 +4,22 @@ Orientacion: Oeste
 Class {
 	#name : #Oeste,
 	#superclass : #Orientacion,
+	#classVars : [
+		'UnicaInstancia'
+	],
 	#category : #'JuegoLaberinto-Laberinto'
 }
+
+{ #category : #accessing }
+Oeste class >> default [
+	UnicaInstancia ifNil:[UnicaInstancia:=super new].
+	^UnicaInstancia.
+]
+
+{ #category : #'instance creation' }
+Oeste class >> new [
+	self error:'no se puede crear objeto'
+]
 
 { #category : #acciones }
 Oeste >> caminar:unBicho [
