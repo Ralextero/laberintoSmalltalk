@@ -10,6 +10,26 @@ Class {
 	#category : #'JuegoLaberinto-Laberinto'
 }
 
+{ #category : #'as yet unclassified' }
+Personaje >> irAlEste [
+	 self posicion irAlEste:self.
+]
+
+{ #category : #'as yet unclassified' }
+Personaje >> irAlNorte [
+	 self posicion irAlNorte:self.
+]
+
+{ #category : #'as yet unclassified' }
+Personaje >> irAlOeste [
+	 self posicion irAlOeste:self.
+]
+
+{ #category : #'as yet unclassified' }
+Personaje >> irAlSur [
+	 self posicion irAlSur:self.
+]
+
 { #category : #accessing }
 Personaje >> nombre [
 
