@@ -36,6 +36,14 @@ Director >> dict: anObject [
 	dict := anObject
 ]
 
+{ #category : #'as yet unclassified' }
+Director >> fabricarBichos [
+	"recorrer la colección de bichos"
+	(self dicc at:'bichos' ifAbsent:[^nil]) do:[:each |
+		self builder fabricarBicho: (each at:'modo') posicion:(each at:'posicion')]. 
+
+]
+
 { #category : #'factory method' }
 Director >> fabricarJuego [ 
 	self builder fabricarJuego.
@@ -86,5 +94,5 @@ Director >> procesar:unArchivoJSON [
 	self iniBuilder.
 	self fabricarLaberinto.
 	self fabricarJuego.
-	"self fabricarBichos."
+	self fabricarBichos.
 ]
