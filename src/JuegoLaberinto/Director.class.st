@@ -36,8 +36,41 @@ Director >> dict: anObject [
 	dict := anObject
 ]
 
+{ #category : #'factory method' }
+Director >> fabricarJuego [ 
+	self builder fabricarJuego.
+]
+
+{ #category : #'factory method' }
+Director >> fabricarLaberinto [
+	self builder fabricarLaberinto.
+	
+	(self dict at:'laberinto') do:[:each | self fabricarLaberintoRecursivo:each en:'root' ].
+
+"recorrer la colección de puertas, para poner las puertas"
+	(self dict at:'puertas') do:[:each | 
+		self builder fabricarPuertaL1:(each at:1) or1:(each at:2) L2:(each at:3) or2:(each at:4)].
+
+
+]
+
+{ #category : #'as yet unclassified' }
+Director >> fabricarLaberintoRecursivo:unDic en:padre [
+| con |
+
+"contenedores"
+(unDic at:'tipo')='habitacion' ifTrue:[con:=self builder fabricarHabitacion:(unDic at:'num')].
+
+"hojas"
+
+(unDic at:'hijos' ifAbsent:[^nil]) do:[:each | self fabricarLaberintoRecursivo:each en:con].
+
+
+]
+
 { #category : #'as yet unclassified' }
 Director >> iniBuilder [
+"aqui podriamos cambiar el builder para crear laberintos diferentes"
 	self builder:LaberintoBuilder new.
 ]
 
@@ -51,4 +84,7 @@ Director >> leerArchivo:unArchivoJSON [
 Director >> procesar:unArchivoJSON [
 	self leerArchivo:unArchivoJSON.
 	self iniBuilder.
+	self fabricarLaberinto.
+	self fabricarJuego.
+	"self fabricarBichos."
 ]
