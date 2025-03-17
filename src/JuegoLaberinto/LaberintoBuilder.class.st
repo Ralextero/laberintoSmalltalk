@@ -11,6 +11,15 @@ Class {
 	#category : #'JuegoLaberinto-Builder'
 }
 
+{ #category : #'as yet unclassified' }
+LaberintoBuilder >> fabricarBichoModo:unModo posicion:unNum [
+	|hab bicho|
+	
+hab:=self laberinto obtenerHabitacion:unNum.
+"crear el bicho, lo voy a copiar del Creator"
+"agregar el bicho al juego"
+]
+
 { #category : #'fm-orientaciones' }
 LaberintoBuilder >> fabricarEste [ 
 	^Este default.

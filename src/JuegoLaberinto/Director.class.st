@@ -39,8 +39,8 @@ Director >> dict: anObject [
 { #category : #'as yet unclassified' }
 Director >> fabricarBichos [
 	"recorrer la colección de bichos"
-	(self dicc at:'bichos' ifAbsent:[^nil]) do:[:each |
-		self builder fabricarBicho: (each at:'modo') posicion:(each at:'posicion')]. 
+	(self dict at:'bichos' ifAbsent:[^nil]) do:[:each |
+		self builder fabricarBichoModo: (each at:'modo') posicion:(each at:'posicion')]. 
 
 ]
 
