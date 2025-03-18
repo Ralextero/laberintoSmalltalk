@@ -11,13 +11,61 @@ Class {
 	#category : #'JuegoLaberinto-Builder'
 }
 
+{ #category : #'factory method' }
+LaberintoBuilder >> fabricarArmario:unNum en:unContenedor [
+	|arm|
+	
+	arm:=Armario new.
+	arm agregarOrientacion: self  fabricarNorte;agregarOrientacion: self fabricarSur;agregarOrientacion:self fabricarEste; agregarOrientacion:self fabricarOeste.
+	arm orientaciones do:[:each | arm ponerEnOr: each elemento:self fabricarPared ].
+	unContenedor agregarHijo:arm.
+	^arm 
+]
+
 { #category : #'as yet unclassified' }
-LaberintoBuilder >> fabricarBichoModo:unModo posicion:unNum [
+LaberintoBuilder >> fabricarBichoAgresivo [
+	|bicho|
+	
+	bicho:= Bicho new.
+	bicho modo: Agresivo new.
+	bicho vidas:5.
+	bicho poder:5.
+	
+	^bicho.
+]
+
+{ #category : #'as yet unclassified' }
+LaberintoBuilder >> fabricarBichoModo:strModo posicion:unNum [
 	|hab bicho|
 	
 hab:=self laberinto obtenerHabitacion:unNum.
 "crear el bicho, lo voy a copiar del Creator"
 "agregar el bicho al juego"
+bicho:= self perform:('fabricarBicho', strModo) asSymbol.
+hab entrar:bicho.
+
+self juego agregarBicho: bicho .
+"alternativa seria:
+strModo ='Agresivo' ifTrue:[bicho:=self fabricarBichoAgresivo:hab]"
+]
+
+{ #category : #'as yet unclassified' }
+LaberintoBuilder >> fabricarBichoPerezoso [
+	|bicho|
+	
+	bicho:= Bicho new.
+	bicho modo: Perezoso new.
+	bicho vidas:1.
+	bicho poder:1.
+	
+	^bicho.
+]
+
+{ #category : #'as yet unclassified' }
+LaberintoBuilder >> fabricarBombaEn:unContenedor [
+	|bmb|
+	bmb:=Bomba new.
+	unContenedor agregarHijo: bmb.
 ]
 
 { #category : #'fm-orientaciones' }
@@ -110,4 +158,9 @@ LaberintoBuilder >> laberinto [
 LaberintoBuilder >> laberinto: anObject [
 
 	laberinto := anObject
+]
+
+{ #category : #accessing }
+LaberintoBuilder >> obtenerJuego [ 
+	^self juego.
 ]
