@@ -46,8 +46,9 @@ Juego >> bichos: anObject [
 
 { #category : #acciones }
 Juego >> buscarBicho [
-|bicho|
+|bicho posPerson|
 
+posPerson := self person posicion.
 bicho := self bichos detect:[:each | each estaVivo and:[each posicion = self person posicion]] ifNone:[nil].
 bicho ifNotNil:[bicho esAtacadoPor: self person].
 ]
@@ -240,14 +241,16 @@ Juego >> crearLaberinto4H4BFM:unFM [
 	^self laberinto
 ]
 
-{ #category : #'as yet unclassified' }
-Juego >> eliminarBicho:unBicho [
-	self bichos remove:unBicho ifAbsent:[Transcript show: 'No existe ese bicho';cr.]
-]
-
 { #category : #'gestion-bichos' }
 Juego >> eliminarBichos:unBicho [
 	self bichos remove:unBicho ifAbsent:[Transcript show:'No existe eze bisho';cr]
+]
+
+{ #category : #'as yet unclassified' }
+Juego >> estanTodosLosBichosMuertos [
+| bicho| 
+bicho:= self bichos detect: [ :each | each estaVivo ] ifNone:[nil].
+	(bicho isNil and:[ self person estaVivo ]) ifTrue:[ self ganaPersonaje ].
 ]
 
 { #category : #accessing }

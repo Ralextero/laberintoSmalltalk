@@ -16,6 +16,11 @@ ElementoMapa >> entrar:alguien [
 	self subclassResponsibility 
 ]
 
+{ #category : #'as yet unclassified' }
+ElementoMapa >> esArmario [ 
+^false
+]
+
 { #category : #consulta }
 ElementoMapa >> esBomba [
 	^false

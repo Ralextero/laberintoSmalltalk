@@ -82,8 +82,10 @@ Director >> fabricarLaberintoRecursivo:unDic en:padre [
 
 { #category : #'as yet unclassified' }
 Director >> iniBuilder [
+(self dict at:'forma')='cuadrado' ifTrue:[self builder: LaberintoBuilder new ].
+(self dict at:'forma')='rombo' ifTrue:[self builder: LaberintoBuilderRombo new ].
 "aqui podriamos cambiar el builder para crear laberintos diferentes"
-	self builder:LaberintoBuilder new.
+	"self builder:LaberintoBuilder new."
 ]
 
 { #category : #'as yet unclassified' }

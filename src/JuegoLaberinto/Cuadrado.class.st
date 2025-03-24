@@ -25,6 +25,26 @@ Cuadrado >> este: anObject [
 	este := anObject
 ]
 
+{ #category : #caminar }
+Cuadrado >> irAlEste:unEnte [
+	self este entrar:unEnte.
+]
+
+{ #category : #caminar }
+Cuadrado >> irAlNorte:unEnte [
+	self norte entrar:unEnte.
+]
+
+{ #category : #caminar }
+Cuadrado >> irAlOeste:unEnte [
+	self oeste entrar:unEnte.
+]
+
+{ #category : #caminar }
+Cuadrado >> irAlSur:unEnte [
+	self sur entrar:unEnte.
+]
+
 { #category : #accessing }
 Cuadrado >> norte [
 

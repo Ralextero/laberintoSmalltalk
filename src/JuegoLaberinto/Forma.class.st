@@ -21,6 +21,26 @@ Forma >> initialize [
 	
 ]
 
+{ #category : #caminar }
+Forma >> irAlEste:alguien [
+self subclassResponsibility 
+]
+
+{ #category : #caminar }
+Forma >> irAlNorte:alguien [
+self subclassResponsibility 
+]
+
+{ #category : #caminar }
+Forma >> irAlOeste:alguien [
+self subclassResponsibility 
+]
+
+{ #category : #caminar }
+Forma >> irAlSur:alguien [
+self subclassResponsibility 
+]
+
 { #category : #'gestion-orientaciones' }
 Forma >> obtenerElementoOr:unaOr [
 	^unaOr obtenerElementoOrEn:self.
@@ -35,6 +55,11 @@ Forma >> obtenerOrientacion [
 	"self orientaciones size"
 ]
 
+{ #category : #'gestion-orientaciones' }
+Forma >> obtenerOrientaciones [ 
+	^self orientaciones
+]
+
 { #category : #accessing }
 Forma >> orientaciones [
 
@@ -45,4 +70,11 @@ Forma >> orientaciones [
 Forma >> orientaciones: anObject [
 
 	orientaciones := anObject
+]
+
+{ #category : #'gestion-orientaciones' }
+Forma >> ponerEnOr:unaOr elemento:unEM [
+	"opcion 1: usar if then else para preguntar por unaOr"
+	"opcion 2: delegar en la orientacion"
+	unaOr ponerElemento:unEM en:self.
 ]
