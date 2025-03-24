@@ -72,6 +72,7 @@ Director >> fabricarLaberintoRecursivo:unDic en:padre [
 
 "hojas y hay que indicar el contenedor donde va la hoja"
 (unDic at:'tipo')='bomba' ifTrue:[self builder fabricarBombaEn:padre].
+(unDic at:'tipo')='tunel' ifTrue:[self builder fabricarTunelEn:padre].
 
 
 (unDic at:'hijos' ifAbsent:[^nil]) do:[:each | self fabricarLaberintoRecursivo:each en:con].

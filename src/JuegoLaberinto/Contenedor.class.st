@@ -6,6 +6,7 @@ Class {
 	#superclass : #ElementoMapa,
 	#instVars : [
 		'hijos',
+		'forma',
 		'orientaciones',
 		'este',
 		'norte',
@@ -25,7 +26,7 @@ Contenedor >> agregarHijo:unEM [
 
 { #category : #'gestion-orientaciones' }
 Contenedor >> agregarOrientacion:unaOr [
-	self orientaciones add:unaOr.
+	self forma agregarOrientacion:unaOr.
 ]
 
 { #category : #'gestion-hijos' }
@@ -51,6 +52,18 @@ Contenedor >> este [
 Contenedor >> este: anObject [
 
 	este := anObject
+]
+
+{ #category : #accessing }
+Contenedor >> forma [
+
+	^ forma
+]
+
+{ #category : #accessing }
+Contenedor >> forma: anObject [
+
+	forma := anObject
 ]
 
 { #category : #accessing }
@@ -95,16 +108,15 @@ Contenedor >> num: anObject [
 	num := anObject
 ]
 
-{ #category : #consulta }
+{ #category : #'gestion-orientaciones' }
 Contenedor >> obtenerElementoOr:unaOr [
-	^unaOr obtenerElementoOrEn:self.
+	^self forma obtenerElementoOrEn:unaOr.
 ]
 
 { #category : #'gestion-orientaciones' }
 Contenedor >> obtenerOrientacion [ 
-	|ind|
-	ind:=(1 to:self orientaciones size) atRandom.
-	^self orientaciones at:ind.
+	"obtenerOrientacionAleatoria"
+	^self forma obtenerOrientacion.
 	
 	"self orientaciones size"
 ]

@@ -136,6 +136,13 @@ LaberintoBuilder >> fabricarSur [
 	^Sur default.
 ]
 
+{ #category : #'as yet unclassified' }
+LaberintoBuilder >> fabricarTunelEn:unContenedor [
+	|tunel|
+	tunel:=Tunel new.
+	unContenedor agregarHijo: tunel.
+]
+
 { #category : #accessing }
 LaberintoBuilder >> juego [
 
