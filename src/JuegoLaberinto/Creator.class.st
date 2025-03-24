@@ -35,6 +35,18 @@ Creator >> fabricarBichoAgresivo [
 ]
 
 { #category : #'fm-bichos' }
+Creator >> fabricarBichoAgresivo:unaHab [
+	|bicho|
+	
+	bicho:= Bicho new.
+	bicho modo: Agresivo new.
+	bicho vidas:5.
+	bicho poder:5.
+	bicho posicion:unaHab.
+	^bicho.
+]
+
+{ #category : #'fm-bichos' }
 Creator >> fabricarBichoPerezoso [
 	|bicho|
 	
@@ -42,6 +54,18 @@ Creator >> fabricarBichoPerezoso [
 	bicho modo: Perezoso new.
 	bicho poder:1.
 	bicho vidas:1.
+	^bicho.
+]
+
+{ #category : #'fm-bichos' }
+Creator >> fabricarBichoPerezoso:unaHab [
+	|bicho|
+	
+	bicho:= Bicho new.
+	bicho modo: Perezoso new.
+	bicho poder:1.
+	bicho vidas:1.
+	bicho posicion:unaHab.
 	^bicho.
 ]
 
@@ -59,7 +83,8 @@ Creator >> fabricarEste [
 Creator >> fabricarHabitacion:unNum [
 	|hab|
 	
-	hab:=Habitacion new num:unNum.
+	hab:=Habitacion new.
+	hab num:unNum.
 	hab agregarOrientacion: self  fabricarNorte;agregarOrientacion: self fabricarSur;agregarOrientacion:self fabricarEste; agregarOrientacion:self fabricarOeste.
 	hab orientaciones do:[:each | hab ponerEnOr: each elemento:self fabricarPared ].
 	

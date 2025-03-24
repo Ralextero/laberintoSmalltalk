@@ -35,5 +35,5 @@ Habitacion >> irAlSur:unEnte [
 { #category : #printing }
 Habitacion >> printOn:aStream [
 
-	aStream nextPutAll:'Hab'; nextPutAll:self num asString.
+	aStream nextPutAll:'Hab '; nextPutAll:self num asString.
 ]
