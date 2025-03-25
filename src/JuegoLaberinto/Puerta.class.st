@@ -57,6 +57,11 @@ Puerta >> esPuerta [
 	^true
 ]
 
+{ #category : #accessing }
+Puerta >> estaAbierta [
+^self abierta
+]
+
 { #category : #initialization }
 Puerta >> initialize [
 	

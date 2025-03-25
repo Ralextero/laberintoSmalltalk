@@ -6,3 +6,8 @@ Class {
 	#superclass : #ElementoMapa,
 	#category : #'JuegoLaberinto-Laberinto'
 }
+
+{ #category : #'as yet unclassified' }
+Hoja >> esTunel [ 
+^false
+]

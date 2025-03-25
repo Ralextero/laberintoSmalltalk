@@ -15,6 +15,11 @@ Tunel >> entrar:alguien [
 	"crear un nuevo laberinto y entrar en el"
 ]
 
+{ #category : #'as yet unclassified' }
+Tunel >> esTunel [ 
+^true
+]
+
 { #category : #accessing }
 Tunel >> laberinto [
 

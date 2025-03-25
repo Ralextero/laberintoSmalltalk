@@ -20,3 +20,8 @@ Perezoso >> dormir:unBicho [
 Perezoso >> esPerezoso [ 
 	^true
 ]
+
+{ #category : #printing }
+Perezoso >> printOn:aStream [
+aStream nextPutAll: 'Perezoso'.
+]

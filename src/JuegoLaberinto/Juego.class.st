@@ -253,6 +253,11 @@ bicho:= self bichos detect: [ :each | each estaVivo ] ifNone:[nil].
 	(bicho isNil and:[ self person estaVivo ]) ifTrue:[ self ganaPersonaje ].
 ]
 
+{ #category : #'as yet unclassified' }
+Juego >> ganaPersonaje [
+	Transcript show: 'Fin juego: gana el personaje';cr.
+]
+
 { #category : #accessing }
 Juego >> hilos [
 

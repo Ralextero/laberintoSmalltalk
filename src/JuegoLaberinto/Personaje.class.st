@@ -11,12 +11,13 @@ Class {
 }
 
 { #category : #acciones }
-Personaje >> esAtacadoPor:unBicho [ "mensaje 12"
-	
-	Transcript show:self printString ; nextPutAll:' es atacado por ' ; nextPutAll: unBicho printString.
-	self vidas:(self vidas - unBicho poder).
-	Transcript show:'Vidas: ' ;nextPutAll: self vidas asString ; cr.
-	self vidas <= 0 ifTrue:[self juego muerePersonaje].
+Personaje >> atacar [ 
+self juego buscarBicho. 
+]
+
+{ #category : #consulta }
+Personaje >> heMuerto [ 
+	self juego muerePersonaje 
 ]
 
 { #category : #movimientos }

@@ -36,6 +36,19 @@ LaberintoBuilder >> fabricarBichoAgresivo [
 ]
 
 { #category : #'as yet unclassified' }
+LaberintoBuilder >> fabricarBichoAgresivo:unaHab [
+	|bicho|
+	
+	bicho:= Bicho new.
+	bicho modo: Agresivo new.
+	bicho posicion: unaHab.
+	bicho vidas:5.
+	bicho poder:5.
+	
+	^bicho.
+]
+
+{ #category : #'as yet unclassified' }
 LaberintoBuilder >> fabricarBichoModo:strModo posicion:unNum [
 	|hab bicho|
 	
@@ -56,6 +69,19 @@ LaberintoBuilder >> fabricarBichoPerezoso [
 	
 	bicho:= Bicho new.
 	bicho modo: Perezoso new.
+	bicho vidas:1.
+	bicho poder:1.
+	
+	^bicho.
+]
+
+{ #category : #'as yet unclassified' }
+LaberintoBuilder >> fabricarBichoPerezoso:unaHab [
+	|bicho|
+	
+	bicho:= Bicho new.
+	bicho modo: Perezoso new.
+	bicho posicion:unaHab.
 	bicho vidas:1.
 	bicho poder:1.
 	

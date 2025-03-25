@@ -61,6 +61,11 @@ Contenedor >> hijos: anObject [
 	hijos := anObject
 ]
 
+{ #category : #initialization }
+Contenedor >> initialize [ 
+hijos:=OrderedCollection new.
+]
+
 { #category : #caminar }
 Contenedor >> irAlEste:alguien [
 self forma irAlEste:alguien.
@@ -95,7 +100,7 @@ Contenedor >> num: anObject [
 
 { #category : #'gestion-orientaciones' }
 Contenedor >> obtenerElementoOr:unaOr [
-	^self forma obtenerElementoOrEn:unaOr.
+	^self forma obtenerElementoOr:unaOr.
 ]
 
 { #category : #'gestion-orientaciones' }
