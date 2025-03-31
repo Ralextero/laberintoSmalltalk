@@ -60,5 +60,5 @@ Laberinto >> printOn:aStream [
 { #category : #recorrido }
 Laberinto >> recorrer:unBloque [
 unBloque value:self.
-self hijos do:[:each |  self recorrer: unBloque].
+self hijos do:[:each |  each recorrer: unBloque].
 ]
