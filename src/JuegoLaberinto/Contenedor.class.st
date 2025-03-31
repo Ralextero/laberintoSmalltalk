@@ -35,6 +35,9 @@ Contenedor >> entrar:alguien [
 	Transcript show:alguien printString; nextPutAll: ' ha entrado en ' ;nextPutAll: self printString;  cr.
 	
 	alguien posicion:self.
+	
+"buscar elemento (tunel) y en caso de que exista "
+"delegar en el bicho (en su modo) el entrar o no en el tunel"
 ]
 
 { #category : #accessing }

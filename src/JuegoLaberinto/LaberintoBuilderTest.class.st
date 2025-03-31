@@ -139,7 +139,7 @@ self juego agregarPersonaje:'Surmania'.
 
 { #category : #tests }
 LaberintoBuilderTest >> testBichoAtaca [
-	|hab1 bicho person|
+	|hab1 bicho person vidas|
 	hab1:=self juego obtenerHabitacion:1.
 	bicho:=self juego bichos at:1.
 	person:= self juego person.
@@ -150,9 +150,12 @@ LaberintoBuilderTest >> testBichoAtaca [
 	hab1 entrar:bicho.
 	hab1 entrar:person.
 	
+	self assert:bicho posicion equals:person posicion.
+	vidas:= person vidas.
 	bicho atacar.
 	
 	self assert: person vidas equals:0.
+	self assert:vidas equals:person vidas + bicho poder.
 ]
 
 { #category : #tests }
@@ -183,7 +186,7 @@ self assert:self juego person vidas equals:5.
 
 { #category : #tests }
 LaberintoBuilderTest >> testPersonajeAtaca [
-	|hab1 bicho person|
+	|hab1 bicho person vidas|
 	hab1:=self juego obtenerHabitacion:1.
 	bicho:=self juego bichos at:1.
 	person:= self juego person.
@@ -193,8 +196,13 @@ LaberintoBuilderTest >> testPersonajeAtaca [
 	
 	hab1 entrar:bicho.
 	hab1 entrar:person.
-	
+	vidas:= bicho vidas.
 	person atacar.
 	
-	self assert: bicho vidas equals:4.
+	self assert: vidas equals: bicho vidas + person poder.
+]
+
+{ #category : #tests }
+LaberintoBuilderTest >> testTunel [
+	juego 
 ]
