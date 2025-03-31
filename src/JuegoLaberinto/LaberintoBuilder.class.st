@@ -52,7 +52,7 @@ LaberintoBuilder >> fabricarBichoAgresivo:unaHab [
 LaberintoBuilder >> fabricarBichoModo:strModo posicion:unNum [
 	|hab bicho|
 	
-hab:=self laberinto obtenerHabitacion:unNum.
+hab:=self juego obtenerHabitacion:unNum.
 "crear el bicho, lo voy a copiar del Creator"
 "agregar el bicho al juego"
 bicho:= self perform:('fabricarBicho', strModo) asSymbol.
@@ -124,7 +124,7 @@ LaberintoBuilder >> fabricarHabitacion:unNum [
 LaberintoBuilder >> fabricarJuego [ 
 	self juego:Juego new.
 	self juego prototipo:self laberinto.
-	self juego laberinto:self laberinto veryDeepCopy.
+	self juego laberinto:self juego clonarLaberinto.
 ]
 
 { #category : #'factory method' }
