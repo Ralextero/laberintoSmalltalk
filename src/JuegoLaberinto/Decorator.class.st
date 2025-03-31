@@ -3,7 +3,7 @@ Decorator es la interfaz comun de los decoradores
 "
 Class {
 	#name : #Decorator,
-	#superclass : #Tunel,
+	#superclass : #Hoja,
 	#instVars : [
 		'em'
 	],

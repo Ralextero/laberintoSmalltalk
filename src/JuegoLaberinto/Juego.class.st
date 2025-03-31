@@ -8,7 +8,8 @@ Class {
 		'laberinto',
 		'bichos',
 		'hilos',
-		'person'
+		'person',
+		'prototipo'
 	],
 	#category : #'JuegoLaberinto-Laberinto'
 }
@@ -246,14 +247,14 @@ Juego >> eliminarBichos:unBicho [
 	self bichos remove:unBicho ifAbsent:[Transcript show:'No existe eze bisho';cr]
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #acciones }
 Juego >> estanTodosLosBichosMuertos [
 | bicho| 
 bicho:= self bichos detect: [ :each | each estaVivo ] ifNone:[nil].
 	(bicho isNil and:[ self person estaVivo ]) ifTrue:[ self ganaPersonaje ].
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #acciones }
 Juego >> ganaPersonaje [
 	Transcript show: 'Fin juego: gana el personaje';cr.
 ]
@@ -326,6 +327,18 @@ Juego >> person [
 Juego >> person: anObject [
 
 	person := anObject
+]
+
+{ #category : #accessing }
+Juego >> prototipo [
+
+	^ prototipo
+]
+
+{ #category : #accessing }
+Juego >> prototipo: anObject [
+
+	prototipo := anObject
 ]
 
 { #category : #acciones }

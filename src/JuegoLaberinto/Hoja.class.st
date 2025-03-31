@@ -7,7 +7,7 @@ Class {
 	#category : #'JuegoLaberinto-Laberinto'
 }
 
-{ #category : #'as yet unclassified' }
+{ #category : #consulta }
 Hoja >> esTunel [ 
 ^false
 ]

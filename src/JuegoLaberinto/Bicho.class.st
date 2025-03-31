@@ -36,7 +36,7 @@ Bicho >> estaVivo [
 	^self vidas > 0
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #acciones }
 Bicho >> heMuerto [
 	self juego terminarBicho: self.
 ]

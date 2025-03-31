@@ -123,7 +123,8 @@ LaberintoBuilder >> fabricarHabitacion:unNum [
 { #category : #'factory method' }
 LaberintoBuilder >> fabricarJuego [ 
 	self juego:Juego new.
-	self juego laberinto:self laberinto.
+	self juego prototipo:self laberinto.
+	self juego laberinto:self laberinto veryDeepCopy.
 ]
 
 { #category : #'factory method' }

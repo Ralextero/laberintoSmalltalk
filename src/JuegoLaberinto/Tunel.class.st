@@ -13,9 +13,11 @@ Class {
 { #category : #caminar }
 Tunel >> entrar:alguien [
 	"crear un nuevo laberinto y entrar en el"
+	self laberinto: alguien clonarLaberinto. "juego prototipo deepCopy. version larga sin delegar"
+	self laberinto entrar:alguien.
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #consulta }
 Tunel >> esTunel [ 
 ^true
 ]
