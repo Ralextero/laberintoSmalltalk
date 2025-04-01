@@ -24,6 +24,13 @@ Modo >> atacar:unBicho [
 	unBicho atacar.
 ]
 
+{ #category : #'as yet unclassified' }
+Modo >> buscarTunelBicho:unBicho [
+	"self subclassResponsibility "
+	"comportamiento predeterminado (no hacer nada / hacer lo que sea)"
+	
+]
+
 { #category : #acciones }
 Modo >> caminar:unBicho [
 	|or |

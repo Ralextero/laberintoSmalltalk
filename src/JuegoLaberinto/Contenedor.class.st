@@ -36,6 +36,11 @@ Contenedor >> entrar:alguien [
 	
 	alguien posicion:self.
 	
+	
+	
+	
+	alguien buscarTunel.
+	
 "buscar elemento (tunel) y en caso de que exista "
 "delegar en el bicho (en su modo) el entrar o no en el tunel"
 ]
