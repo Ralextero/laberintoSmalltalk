@@ -5,43 +5,34 @@ Class {
 	#name : #Puerta,
 	#superclass : #ElementoMapa,
 	#instVars : [
-		'abierta',
 		'lado1',
-		'lado2'
+		'lado2',
+		'estado'
 	],
 	#category : #'JuegoLaberinto-Laberinto'
 }
 
-{ #category : #accessing }
-Puerta >> abierta [
-
-	^ abierta
-]
-
-{ #category : #accessing }
-Puerta >> abierta: anObject [
-
-	abierta := anObject
-]
-
 { #category : #acciones }
 Puerta >> abrir [ 
 
-	self abierta:true.
-	Transcript show: 'Puerta abierta';cr.
+	"self abierta:true.
+	Transcript show: 'Puerta abierta';cr."
+	self estado abrir:self.
 ]
 
 { #category : #acciones }
 Puerta >> cerrar [ 
 
-	self abierta:false.
-	Transcript show: 'Puerta cerrada';cr.
+	"self abierta:false.
+	Transcript show: 'Puerta cerrada';cr."
+	self estado: Cerrada new.
 ]
 
 { #category : #caminar }
 Puerta >> entrar:alguien [
 
-	self abierta 
+	self estado entrar:alguien puerta:self.
+	"self estaAbierta 
 	ifTrue:[
 		alguien posicion = self lado1 ifTrue:[
 			self lado2 entrar:alguien
@@ -49,7 +40,9 @@ Puerta >> entrar:alguien [
 			self lado1 entrar:alguien
 			]
 		]
-	ifFalse:[Transcript show:'Te has chocado con la puerta';cr.].
+	ifFalse:[Transcript show:'Te has chocado con la puerta';cr.]."
+	
+	
 ]
 
 { #category : #consulta }
@@ -59,13 +52,25 @@ Puerta >> esPuerta [
 
 { #category : #accessing }
 Puerta >> estaAbierta [
-^self abierta
+	^self estado estaAbierta
+]
+
+{ #category : #accessing }
+Puerta >> estado [
+
+	^ estado
+]
+
+{ #category : #accessing }
+Puerta >> estado: anObject [
+
+	estado := anObject
 ]
 
 { #category : #initialization }
 Puerta >> initialize [
 	
-	abierta:=false.
+	estado:=Cerrada new.
 	"self abierta:false"
 ]
 
@@ -97,4 +102,15 @@ Puerta >> lado2: anObject [
 Puerta >> printOn:aStream [
 
 	aStream nextPutAll:'Puerta-'; nextPutAll:self lado1 num asString; nextPutAll:'-' ;nextPutAll:self lado2 num asString; nextPutAll: self abierta asString.
+]
+
+{ #category : #caminar }
+Puerta >> puedeEntrar:alguien [
+		alguien posicion = self lado1 ifTrue:[
+			self lado2 entrar:alguien
+			] ifFalse:[
+			self lado1 entrar:alguien
+			]
+	
+	
 ]
