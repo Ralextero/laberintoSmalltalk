@@ -16,8 +16,8 @@ Bicho >> actua [
 ]
 
 { #category : #acciones }
-Bicho >> atacar [ 
-	self juego buscarPersonaje:self.
+Bicho >> avisar [
+	self juego terminarBicho: self.
 ]
 
 { #category : #'as yet unclassified' }
@@ -40,11 +40,6 @@ Bicho >> esPerezoso [
 Bicho >> estaVivo [
 
 	^self vidas > 0
-]
-
-{ #category : #acciones }
-Bicho >> heMuerto [
-	self juego terminarBicho: self.
 ]
 
 { #category : #initialize }
@@ -81,4 +76,15 @@ Bicho >> obtenerOrientacion [
 { #category : #printing }
 Bicho >> printOn:aStream [
 	aStream nextPutAll:  'Bicho ' ; nextPutAll:self modo printString.
+]
+
+{ #category : #'as yet unclassified' }
+Bicho >> puedeActuar [
+	"self modo actua:self."
+	self estadoEnte actua:self.
+]
+
+{ #category : #acciones }
+Bicho >> puedeAtacar [ 
+	self juego buscarPersonaje:self.
 ]

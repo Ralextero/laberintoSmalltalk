@@ -10,20 +10,15 @@ Class {
 	#category : #'JuegoLaberinto-Laberinto'
 }
 
-{ #category : #acciones }
-Personaje >> atacar [ 
-self juego buscarBicho. 
+{ #category : #consulta }
+Personaje >> avisar [
+	self juego muerePersonaje 
 ]
 
 { #category : #'as yet unclassified' }
 Personaje >> crearNuevoLaberinto:unTunel [
 
 	unTunel crearNuevoLaberinto:self.
-]
-
-{ #category : #consulta }
-Personaje >> heMuerto [ 
-	self juego muerePersonaje 
 ]
 
 { #category : #movimientos }
@@ -56,4 +51,9 @@ Personaje >> nombre [
 Personaje >> nombre: anObject [
 
 	nombre := anObject
+]
+
+{ #category : #acciones }
+Personaje >> puedeAtacar [ 
+self juego buscarBicho. 
 ]

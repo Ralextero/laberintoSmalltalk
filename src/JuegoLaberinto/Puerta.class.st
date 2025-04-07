@@ -32,7 +32,7 @@ Puerta >> cerrar [
 Puerta >> entrar:alguien [
 
 	self estado entrar:alguien puerta:self.
-	"self estaAbierta 
+	"self abierta 
 	ifTrue:[
 		alguien posicion = self lado1 ifTrue:[
 			self lado2 entrar:alguien
