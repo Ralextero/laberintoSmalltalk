@@ -12,6 +12,15 @@ Class {
 	#category : #'JuegoLaberinto-Laberinto'
 }
 
+{ #category : #recorrido }
+Contenedor >> aceptar:unVisitor [
+
+	self visitarContenedor: unVisitor.
+	self hijos do: [:each|each aceptar:unVisitor]. 
+	"tengo que recorrrer las orientaciones tambien"
+	"self obtenerOrientaciones do:[:each | each aceptar:unVisitor contenedor: self forma]."
+]
+
 { #category : #'gestion-hijos' }
 Contenedor >> agregarHijo:unEM [
 	unEM padre:self.
@@ -140,4 +149,9 @@ Contenedor >> recorrer:unBloque [
 	self hijos do: [:each|each recorrer:unBloque]. 
 	"tengo que recorrrer las orientaciones tambien"
 	self obtenerOrientaciones do:[:each | each recorrer:unBloque contenedor: self forma].
+]
+
+{ #category : #'as yet unclassified' }
+Contenedor >> visitarContenedor: unVisitor [
+	self subclassResponsibility 
 ]

@@ -11,6 +11,11 @@ Class {
 }
 
 { #category : #'as yet unclassified' }
+Tunel >> aceptar:unVisitor [
+	unVisitor visitarTunel:self
+]
+
+{ #category : #'as yet unclassified' }
 Tunel >> crearNuevoLaberinto:alguien [
 
 	Transcript show:alguien printString; nextPutAll:' crea un nuevo laberinto';cr.
@@ -45,4 +50,9 @@ Tunel >> laberinto [
 Tunel >> laberinto: anObject [
 
 	laberinto := anObject
+]
+
+{ #category : #printing }
+Tunel >> printOn:aStream [
+	aStream nextPutAll: 'Tunel '
 ]
