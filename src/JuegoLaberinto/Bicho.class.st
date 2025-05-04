@@ -12,7 +12,7 @@ Class {
 
 { #category : #initialize }
 Bicho >> actua [
-	self modo actua:self
+	self estadoEnte actua:self
 ]
 
 { #category : #acciones }
@@ -20,7 +20,7 @@ Bicho >> avisar [
 	self juego terminarBicho: self.
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #acciones }
 Bicho >> buscarTunel [ 	
 	self modo buscarTunelBicho:self.
 	
@@ -34,12 +34,6 @@ Bicho >> esAgresivo [
 { #category : #consulta }
 Bicho >> esPerezoso [
 	^self modo esPerezoso.
-]
-
-{ #category : #consulta }
-Bicho >> estaVivo [
-
-	^self vidas > 0
 ]
 
 { #category : #initialize }
@@ -75,13 +69,13 @@ Bicho >> obtenerOrientacion [
 
 { #category : #printing }
 Bicho >> printOn:aStream [
-	aStream nextPutAll:  'Bicho ' ; nextPutAll:self modo printString.
+	aStream nextPutAll:  'Bicho ' ; nextPutAll:self modo asString.
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #acciones }
 Bicho >> puedeActuar [
 	"self modo actua:self."
-	self estadoEnte actua:self.
+	self modo actua:self.
 ]
 
 { #category : #acciones }

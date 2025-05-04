@@ -1,3 +1,6 @@
+"
+Abrir representa a la petición abrir de los elementos del mapa
+"
 Class {
 	#name : #Abrir,
 	#superclass : #Comando,

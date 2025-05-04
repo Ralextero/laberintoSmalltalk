@@ -9,7 +9,7 @@ Class {
 
 { #category : #'as yet unclassified' }
 Cerrada >> abrir:unaPuerta [
-	Transcript show: 'Puerta abierta';cr.
+	Transcript show:unaPuerta printString; nextPutAll: ' abierta';cr.
 	unaPuerta estado:Abierta new.
 ]
 
