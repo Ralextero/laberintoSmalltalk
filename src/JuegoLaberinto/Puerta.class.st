@@ -7,7 +7,8 @@ Class {
 	#instVars : [
 		'lado1',
 		'lado2',
-		'estado'
+		'estado',
+		'visitada'
 	],
 	#category : #'JuegoLaberinto-Laberinto'
 }
@@ -88,6 +89,7 @@ Puerta >> estado: anObject [
 Puerta >> initialize [
 	super initialize.
 	estado:=Cerrada new.
+	visitada:=false.
 	"self abierta:false"
 ]
 
@@ -130,4 +132,16 @@ Puerta >> puedeEntrar:alguien [
 			]
 	
 	
+]
+
+{ #category : #accessing }
+Puerta >> visitada [
+
+	^ visitada
+]
+
+{ #category : #accessing }
+Puerta >> visitada: anObject [
+
+	visitada := anObject
 ]

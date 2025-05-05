@@ -21,6 +21,11 @@ ElementoMapa >> agregarComando:unComando [
 	self comandos add:unComando
 ]
 
+{ #category : #'as yet unclassified' }
+ElementoMapa >> calcularPosicionDesde: unaForma en: unPunto [ 
+	"no hacemos nada por defecto"
+]
+
 { #category : #accessing }
 ElementoMapa >> comandos [
 
