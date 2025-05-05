@@ -33,6 +33,12 @@ Contenedor >> agregarOrientacion:unaOr [
 	self forma agregarOrientacion:unaOr.
 ]
 
+{ #category : #'as yet unclassified' }
+Contenedor >> calcularPosicion [
+	self forma calcularPosicion
+
+]
+
 { #category : #'gestion-hijos' }
 Contenedor >> eliminarHijo:unEM [
 	self hijos remove:unEM ifAbsent:["No existe ese objeto hijo"]
@@ -52,6 +58,19 @@ Contenedor >> entrar:alguien [
 	
 "buscar elemento (tunel) y en caso de que exista "
 "delegar en el bicho (en su modo) el entrar o no en el tunel"
+]
+
+{ #category : #accessing }
+Contenedor >> extent [
+	^self forma extent
+
+
+]
+
+{ #category : #geometry }
+Contenedor >> extent:unPunto [
+	self forma extent:unPunto
+
 ]
 
 { #category : #accessing }
@@ -140,6 +159,18 @@ Contenedor >> ponerEnOr:unaOr elemento:unEM [
 	"opcion 2: delegar en la orientacion"
 	"unaOr ponerElemento:unEM en:self."
 	self forma ponerEnOr:unaOr elemento:unEM.  
+]
+
+{ #category : #accessing }
+Contenedor >> punto [
+	^self forma punto
+
+]
+
+{ #category : #accessing }
+Contenedor >> punto:unPunto [
+	self forma punto:unPunto
+
 ]
 
 { #category : #recorrido }

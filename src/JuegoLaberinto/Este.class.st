@@ -21,6 +21,14 @@ Este class >> new [
 	self error:'no se puede crear objeto'
 ]
 
+{ #category : #'as yet unclassified' }
+Este >> calcularPosicionDesde: unaForma [
+	| unPunto |
+	unPunto := (unaForma punto x+1) @ (unaForma punto y).
+	unaForma este calcularPosicionDesde: unaForma en: unPunto
+
+]
+
 { #category : #acciones }
 Este >> caminar:unBicho [
 	|pos|

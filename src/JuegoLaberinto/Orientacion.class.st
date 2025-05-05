@@ -7,6 +7,12 @@ Class {
 	#category : #'JuegoLaberinto-Laberinto'
 }
 
+{ #category : #'as yet unclassified' }
+Orientacion >> calcularPosicionDesde:unaForma [
+	self subclassResponsibility 
+
+]
+
 { #category : #acciones }
 Orientacion >> caminar:unBicho [
 
