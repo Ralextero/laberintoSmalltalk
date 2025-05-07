@@ -32,7 +32,8 @@ Class {
 		'mCP',
 		'mLB',
 		'personM',
-		'bichosM'
+		'bichosM',
+		'resetB'
 	],
 	#category : #'JuegoLaberinto-Vista'
 }
@@ -152,6 +153,7 @@ LaberintoGUI >> dibujarLaberinto [
 	self mostrarAbrirPuertas .
 	self mostrarLanzarBichos .
 	self mostrarDetenerBichos .
+	self mostrarReset.
 	"self mostrarVolverAJugar."
 ]
 
@@ -317,6 +319,13 @@ LaberintoGUI >> mostrarPersonaje [
 	self personM position: self position + (a @ b)
 ]
 
+{ #category : #'as yet unclassified' }
+LaberintoGUI >> mostrarReset [
+resetB := SimpleButtonMorph new target:self; label:'Reset';actionSelector: #reset. 
+self addMorph: self resetB.
+self resetB position:self position + (5@200).
+]
+
 { #category : #dibujar }
 LaberintoGUI >> mostrarVidasPersonaje [ 
 	|tM|
@@ -394,6 +403,18 @@ LaberintoGUI >> reset [
 	self bichosM: Dictionary new.
 	self win ifNotNil: [ self win delete ].
 	self iniciarJuego.
+]
+
+{ #category : #accessing }
+LaberintoGUI >> resetB [
+
+	^ resetB
+]
+
+{ #category : #accessing }
+LaberintoGUI >> resetB: anObject [
+
+	resetB := anObject
 ]
 
 { #category : #acciones }

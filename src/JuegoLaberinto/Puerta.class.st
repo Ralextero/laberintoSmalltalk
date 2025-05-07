@@ -120,7 +120,7 @@ Puerta >> lado2: anObject [
 { #category : #printing }
 Puerta >> printOn:aStream [
 
-	aStream nextPutAll:'Puerta-'; nextPutAll:self lado1 num asString; nextPutAll:'-' ;nextPutAll:self lado2 num asString; nextPutAll: self abierta asString.
+	aStream nextPutAll:'Puerta-'; nextPutAll:self lado1 num asString; nextPutAll:'-' ;nextPutAll:self lado2 num asString; nextPutAll: self estado asString.
 ]
 
 { #category : #caminar }
