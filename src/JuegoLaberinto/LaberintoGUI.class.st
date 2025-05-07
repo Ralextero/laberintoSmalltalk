@@ -152,7 +152,7 @@ LaberintoGUI >> dibujarLaberinto [
 	self mostrarAbrirPuertas .
 	self mostrarLanzarBichos .
 	self mostrarDetenerBichos .
-	self mostrarVolverAJugar.
+	"self mostrarVolverAJugar."
 ]
 
 { #category : #'event handling' }
